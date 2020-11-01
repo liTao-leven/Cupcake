@@ -1934,6 +1934,24 @@ public class StylesMaker: NSObject {
                     textField.clearMode(value as! UITextFieldViewMode_)
                 }
             }
+            
+            else if key == "touchEnabled" {
+                view.touchEnabled(value as! Bool)
+            }
+            
+//            else if key == "hugging" {
+//                let v = value as! (UILayoutPriority,NSLayoutConstraint)
+//                view.hugging(v.1, v.0)
+//            }
+//            
+//            else if key == "resistance" {
+//                let v = value as! (UILayoutPriority,NSLayoutConstraint)
+//                view.resistance(v.1, v.0)
+//            }
+            
+            else if key == "tg" {
+                view.tg(value as! Int)
+            }
                 
             else {
                 let sel = NSSelectorFromString(key + ":")

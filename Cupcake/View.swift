@@ -106,6 +106,32 @@ public extension UIView {
         return self
     }
     
+    @discardableResult func addCenterTo(_ superView:UIView) -> Self {
+        return addTo(superView).makeCons { (make) in
+            make.center.equal(superView)
+        }
+    }
+    @discardableResult func clip() -> Self{
+        clipsToBounds = true
+        return self
+    }
+    @discardableResult func touchEnabled(_ enabled:Bool = false) -> Self{
+        isUserInteractionEnabled = enabled
+        return self
+    }
+    @discardableResult func hugging(_ priority:UILayoutPriority,_ axis:NSLayoutConstraint.Axis = .horizontal) -> Self{
+        setContentHuggingPriority(priority, for: axis)
+        return self
+    }
+    @discardableResult func resistance(_ priority:UILayoutPriority,_ axis:NSLayoutConstraint.Axis = .horizontal) -> Self{
+        setContentCompressionResistancePriority(priority, for: axis)
+        return self
+    }
+    @discardableResult func tg(_ tag:Int) -> Self{
+        self.tag = tag
+        return self
+    }
+    
     
     /**
      * Apply at most 4 styles to view.

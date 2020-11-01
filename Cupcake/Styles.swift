@@ -89,6 +89,24 @@ public extension StylesMaker {
         return addStyle(key: #function, value: insets)
     }
     
+    @discardableResult func touchEnabled(_ enabled:Bool = false) -> Self {
+        return addStyle(key: #function, value: enabled)
+    }
+    
+    @discardableResult func hugging(_ priority:UILayoutPriority,_ axis:NSLayoutConstraint.Axis = .horizontal) -> Self{
+        let value: (UILayoutPriority,NSLayoutConstraint.Axis) = (priority,axis)
+        return addStyle(key: #function, value: value)
+    }
+    
+    @discardableResult func resistance(_ priority:UILayoutPriority,_ axis:NSLayoutConstraint.Axis = .horizontal) -> Self{
+        let value: (UILayoutPriority,NSLayoutConstraint.Axis) = (priority,axis)
+        return addStyle(key: #function, value: value)
+    }
+    
+    @discardableResult func tg(_ tag:Int) -> Self{
+        return addStyle(key: #function, value: tag)
+    }
+    
     
     //Label
     @discardableResult func str(_ any: Any) -> Self {
